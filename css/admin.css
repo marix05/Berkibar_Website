@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --bs-body-font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  min-width: 300px;
+  max-width: 1800px;
+  width: 100%;
+  margin: auto;
+}
+
+.logo h1 {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+nav {
+  background: #22cbfa;
+  border-bottom: 5px solid rgba(32, 171, 209, 0.8509803922);
+}
+
+nav .logo span {
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+.profile-img {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+  border: 2px solid #dadada;
+  background: #fff;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  min-height: 88.7vh;
+}
+
+.sidebar-container {
+  background: #fff;
+  min-width: 12em;
+  max-width: 14em;
+}
+
+.list-group-item {
+  padding: 10px 20px;
+  color: #434343;
+  border: none;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.list-group-item.active {
+  background: transparent;
+  color: #22cbfa;
+}
+
+.list-group-item:hover {
+  background: #e7faff;
+}
+
+.page-content-container {
+  background: linear-gradient(90deg, #e7faff, #f6fdff);
+  width: 100%;
+}
+
+#sidebar-toggler.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+table thead tr {
+  background: rgba(33, 207, 255, 0.5960784314);
+  color: #fff;
+}
+
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_length {
+  padding-bottom: 1em;
+}
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_info {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: #fff !important;
+  background: rgba(33, 207, 255, 0.5960784314);
+  border: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: #333 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #e3e2e2;
+  color: #333 !important;
+  border: none;
+}
+
+.edit-form {
+  width: 100%;
+  min-width: 250px;
+}
+.edit-form .form-btn {
+  background: #b6f6ff;
+  color: #22cbfa;
+  text-transform: capitalize;
+  font-size: 1em;
+  padding: 5px 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.edit-form .form-btn:hover {
+  background: #22cbfa;
+  color: #fff;
+}
+
+.input-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 1em 0;
+  padding: 0.2em 0;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.i {
+  color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.i i {
+  transition: 0.3s;
+}
+
+.input-div > div {
+  position: relative;
+  height: 45px;
+}
+
+.input-div > div > h5 {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.2em;
+  transition: 0.3s;
+}
+
+.input-div:before,
+.input-div:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #9df1fc;
+  transition: 0.4s;
+}
+
+.input-div:before {
+  right: 50%;
+}
+
+.input-div:after {
+  left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+  width: 50%;
+}
+
+.input-div.focus {
+  border: 2px solid #d9d9d9;
+}
+
+.input-div.focus > div > h5 {
+  top: -5px;
+  font-size: 1rem;
+  color: #000;
+}
+
+.input-div.focus > .i > i {
+  color: #22cbfa;
+}
+
+.input-div > div > input,
+.input-div > div > select {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+@media screen and (max-width: 640px) {
+  .dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: left;
+  }
+}/*# sourceMappingURL=admin.css.map */

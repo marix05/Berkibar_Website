@@ -1,0 +1,30 @@
+<xml id="tutorfav">
+    <tutor>
+        <nama>Marix Marchellino Susanto</nama>
+        <nim>09031382126136</nim>
+        <telepon>087763986698</telepon>
+        <email>marixsusantooo@gmail.com</email>
+        <bidang>Matematika</bidang>
+    </tutor>
+    <tutor>
+        <nama>Dewi Riyani</nama>
+        <nim>09031382126148</nim>
+        <telepon>081329492240</telepon>
+        <email>dewiriyani615@gmail.com</email>
+        <bidang>Bahasa Indonesia</bidang>
+    </tutor>
+    <tutor>
+        <nama>Vikky Aditya Febrianza Husin</nama>
+        <nim>09031382126120</nim>
+        <telepon>082182602065</telepon>
+        <email>vikkyaditya0602@gmail.com</email>
+        <bidang>Sosiologi</bidang>
+    </tutor>
+    <tutor>
+        <nama>Muhammad Kevin Darell</nama>
+        <nim>09031382126158</nim>
+        <telepon>085928883618</telepon>
+        <email>mkevindarrell1207@gmail.com</email>
+        <bidang>Bahasa Inggris</bidang>
+    </tutor>
+</xml>

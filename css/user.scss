@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root{
+  --bs-body-font-family : "Poppins", sans-serif;
+}
+
+body, html { 
+    overflow-x: hidden; 
+}
+
+//nav menu
+.logo h1{
+    font-size: 2em;
+    font-weight: 900;
+}
+
+nav{
+    background: #22cbfa;
+    border-bottom: 5px solid #20abd1d9 ;
+}
+  
+nav .logo span{
+    font-size: .9em;
+    font-weight: 700;
+}
+
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+}
+
+.navbar-toggler.nav-menu {
+    padding: 0;
+    font-size: 2rem;
+    line-height: unset;
+    background-color: transparent;
+    border: none;
+    border-radius: unset;
+    
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.profile-img{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid #dadada;
+    background: #fff;
+    overflow: hidden;
+}
+//nav menu end
+
+//section beranda
+.beranda-right{
+    overflow-x: hidden;
+
+    .beranda-img{
+        min-width: 425px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+//section berana end
+
+//section kursus
+.kursus-wrapper{
+    background: #fcacac;
+
+    .nav-pills{
+        border-bottom: 2px solid #fff;
+    }
+
+    .nav-link{
+        background: linear-gradient(#fff, #fff);
+        background-position: 50% 50%;
+        background-repeat: no-repeat ;
+        background-size: 100% 0%;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 25px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: all .5s ease-out;
+        color: #fff;
+
+        &:hover{
+            background-position: 0% 100%;
+            background-size: 100% 100%;
+            color: #000;
+        }
+    }
+
+    .nav-link.active{
+        color: #000;
+        background: #fff;
+    }
+    
+    .card{
+        border-radius: 15px;
+    }
+    
+    .card-img-top{
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .card-title{
+        text-decoration: none;
+        color: #24262b;
+
+        &:hover{
+            color: #22cbfa;
+        }
+    }
+}
+
+.req{
+    .badge{
+        text-decoration: none;
+        border: 1px solid #000;
+    }
+
+    .bg-premium{
+        background: linear-gradient(90deg, #d9f7ff, #ffe4e4);
+    }
+
+    .bg-berki{
+        background: linear-gradient(90deg, #c9e9f2, #d0f7ea);
+    }
+
+    .bg-kibar{
+        background: linear-gradient(90deg, #fce8e8, #fff2d4);
+    }
+}
+//section kursus end
+
+//section tutor favorit
+.tutor-container{
+    overflow: hidden;
+
+    .swiper-slide{
+        margin-right: 2.6em;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    
+    .card-img-top{
+        height: 250px;
+        object-fit: cover;
+        object-position: top;
+        overflow: hidden;
+    }
+
+    .card-body{
+        max-height: 200px;
+        height: auto;
+    }
+
+    .swiper-slide{
+        width: 100%;
+        max-width: 290px;
+        min-width: 270px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+}
+//section tutor favorit end
+
+//footer
+.footer{
+	background: #22cbfa;
+    border-top: 5px solid #20abd1d9;
+    color: var(--basiccolor);
+    min-width: 300px;
+
+
+    .footer-row{
+        display: flex;
+        flex-wrap: wrap;
+        
+        .footer-col{
+            width: 25%;
+
+            h4{
+                font-size: 1.4rem;
+                color: #fff;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 600;
+                position: relative;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left:0;
+                    bottom: -10px;
+                    background-color: #000;
+                    height: 3px;
+                    width: 50px;
+                }
+            }
+
+            ul{
+                padding-left: 0;
+            }
+
+            ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+            ul li a{
+                font-size: 1.2rem;
+                text-transform: capitalize;
+                color: #fff;
+                text-decoration: none;
+                font-weight: 300;
+                display: block;
+                transition: all 0.3s ease;
+
+                &:hover{
+                    color: #fff;
+                    padding-left: 10px;
+                }
+            }
+
+            .social-links a{
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-color: rgba(255,255,255,0.2);
+                margin:0 10px 10px 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: #ffffff;
+                transition: all 0.5s ease;
+
+                &:hover{
+                    color: #24262b;
+                    background-color: #ffffff;
+                }
+            }
+        }
+    }
+
+    ul{
+        list-style: none;
+    }
+}
+//footer end
+  
+
+@media only screen and (max-width: 1000px){
+    .footer{
+        .footer-row{
+            .footer-col{
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .kursus-wrapper .card-img-top{
+        height: 300px;
+    }
+
+    .footer{
+        .footer-row{
+            .footer-col{
+                width: 100%;
+                
+                h4{
+                    margin: 35px auto;
+                    max-width: 200px;
+                    
+                    &::before{
+                        left: auto;
+                    }
+                }
+    
+                ul{
+                    margin: 0 auto;
+                    max-width: 200px;
+                }
+    
+                .social-links{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .main-nav .collapse .nav-item .nav-link{
+        margin: 0 20px;
+        color: #fff;
+    }
+}

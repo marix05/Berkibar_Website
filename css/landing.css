@@ -1,0 +1,899 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --black: #272d3b;
+  --firstcolor: #fcacac;
+  --basiccolor: #fff;
+  --secondcolor: #f7cfcf;
+  --thirdcolor: #9df1fc;
+  --fourthcolor: #b6f6ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  min-width: 300px;
+  max-width: 1800px;
+  width: 100%;
+  margin: auto;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.sub-heading {
+  text-align: justify;
+  font-size: 1rem;
+  padding: 2rem 1.5rem;
+  color: #848484;
+}
+.sub-heading span {
+  color: var(--black);
+}
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 300px;
+  z-index: 1;
+  background: #22cbfa;
+}
+
+nav {
+  display: flex;
+  height: 5rem;
+  border-bottom: 5px solid rgba(32, 171, 209, 0.8509803922);
+}
+nav::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  max-height: 500vh;
+  height: 100%;
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.5764705882);
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s;
+}
+nav .logo {
+  color: var(--basiccolor);
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  z-index: 2000;
+  left: 2.5rem;
+  transform: translateY(-50%);
+  line-height: 1.5rem;
+}
+nav .logo h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+nav .logo span {
+  color: var(--basiccolor);
+  font-size: 0.9rem;
+}
+nav .login {
+  text-decoration: none;
+  transition: all 0.5s;
+  color: var(--basiccolor);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6rem;
+  z-index: 2000;
+  transition: all 0.5s;
+}
+nav .login .btn {
+  padding: 5px 50px;
+  border: 2px solid var(--basiccolor);
+  border-radius: 25px;
+}
+nav .login .btn h4 {
+  font-size: 1.2rem;
+}
+nav .menu-toggle {
+  color: var(--basiccolor);
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2000;
+  right: 2.5rem;
+}
+nav .menu-toggle .fa-times {
+  display: none;
+}
+nav .nav-menu {
+  list-style: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 50vh;
+  width: 100%;
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1000;
+  transform: translateY(-150%);
+  transition: transform 0.5s;
+  background: var(--basiccolor);
+  transition: all 0.5s;
+}
+nav ul a {
+  text-decoration: none;
+  position: relative;
+}
+nav ul a:first-child {
+  margin-top: 4rem;
+}
+nav ul a .menu {
+  transition: background-color 0.1s;
+  display: flex;
+  justify-content: space-between;
+}
+nav ul a .menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--black);
+  height: 1.5px;
+  width: 100%;
+  bottom: 0;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform 0.2s ease-in-out;
+}
+nav ul a .menu:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+nav ul a .menu h4,
+nav ul a .menu i {
+  color: #848484;
+  transition: all 0.5s;
+  font-size: 1.2rem;
+}
+nav ul a .menu:hover h4,
+nav ul a .menu:hover i {
+  color: var(--black);
+}
+
+.open header nav .menu-toggle .fa-times {
+  display: block;
+}
+
+.open header nav .menu-toggle .fa-bars {
+  display: none;
+}
+
+.open header nav .nav-menu {
+  transform: translateX(0);
+}
+
+.open header nav::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.open header nav .logo {
+  color: #22cbfa;
+}
+.open header nav .logo span {
+  color: var(--thirdcolor);
+}
+.open header nav .login {
+  color: #22cbfa;
+}
+.open header nav .login .btn {
+  border: 2px solid #22cbfa;
+}
+.open header nav .menu-toggle {
+  color: #22cbfa;
+}
+
+.beranda {
+  overflow: hidden;
+  padding: 0 1.5rem;
+}
+.beranda .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.beranda .container .content-left {
+  color: var(--black);
+  padding: 1rem 0;
+}
+.beranda .container .content-left h1 {
+  text-transform: capitalize;
+  font-size: 1.8rem;
+}
+.beranda .container .content-left h1 span {
+  color: #ff8b8b;
+}
+.beranda .container .content-left p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+.beranda .container .content-left .btn-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.beranda .container .content-left .btn-container .btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  background: var(--thirdcolor);
+  color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  transition: all 0.5s;
+  font-size: 1rem;
+}
+.beranda .container .content-left .btn-container .btn:hover {
+  background: var(--basiccolor);
+  color: #22cbfa;
+  border: 2px solid #22cbfa;
+}
+.beranda .container .content-right {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+.beranda .container .content-right img {
+  min-width: 450px;
+  max-width: 100%;
+  height: auto;
+}
+
+.tentang .swiper-container {
+  width: 100%;
+  max-width: 100vw;
+  min-width: 300px;
+  overflow: hidden;
+  padding: 2rem 0 4rem 0;
+}
+
+.tentang .swiper-slide {
+  width: 100%;
+  max-width: 280px;
+  height: 400px;
+}
+.tentang .swiper-slide:nth-child(odd) {
+  background: var(--secondcolor);
+}
+.tentang .swiper-slide:nth-child(odd) .desc {
+  background: var(--thirdcolor);
+}
+.tentang .swiper-slide:nth-child(even) {
+  background: var(--thirdcolor);
+}
+.tentang .swiper-slide:nth-child(even) .desc {
+  background: var(--secondcolor);
+}
+.tentang .swiper-slide .desc {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+
+.tentang .swiper-slide img {
+  width: 100%;
+  max-width: 280px;
+  max-height: 400px;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.layanan .content-container {
+  position: relative;
+  margin: 2rem 0 4rem 0;
+  padding: 0 0.5rem;
+  background: var(--firstcolor);
+}
+.layanan .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid var(--basiccolor);
+  padding: 1rem 0;
+  margin: 0 2rem;
+}
+.layanan .btn-container button {
+  background: linear-gradient(var(--basiccolor), var(--basiccolor));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 25px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.5s ease-out;
+  color: var(--basiccolor);
+}
+.layanan .btn-container button:nth-child(even) {
+  margin: 0 2rem;
+}
+.layanan .btn-container button:hover {
+  background-position: 0% 100%;
+  background-size: 100% 100%;
+  color: var(--black);
+}
+.layanan .content {
+  display: none;
+}
+
+.layanan .active {
+  display: block;
+  padding: 2rem 0;
+}
+.layanan .active .swiper-container {
+  width: 100%;
+  max-width: 100vw;
+  min-width: 280px;
+  overflow: hidden;
+}
+.layanan .active .swiper-slide {
+  width: 100%;
+  max-width: 280px;
+  min-width: 280px;
+  min-height: 380px;
+  max-height: 400px;
+  background: var(--basiccolor);
+  border-radius: 20px;
+  margin: 0 1rem;
+}
+.layanan .active .card {
+  position: relative;
+  border-radius: 20px 20px 0 0;
+}
+.layanan .active .card img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 0 0;
+  bottom: -1.5rem;
+}
+.layanan .active .card .feature {
+  position: absolute;
+  top: 1rem;
+  left: -1rem;
+  padding: 3px 30px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.layanan .active .card .jenis {
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0.5rem;
+  padding: 3px 20px;
+  font-weight: bold;
+}
+.layanan .active .premium {
+  background: linear-gradient(90deg, #ffe4e4, #d9f7ff);
+}
+.layanan .active .premium .feature,
+.layanan .active .premium .jenis {
+  color: var(--black);
+  background: linear-gradient(90deg, #d9f7ff, #ffe4e4);
+  border: 1px solid var(--black);
+}
+.layanan .active .berki {
+  background: linear-gradient(90deg, #d0f7ea, #c9e9f2);
+}
+.layanan .active .berki .feature,
+.layanan .active .berki .jenis {
+  color: var(--black);
+  background: linear-gradient(90deg, #c9e9f2, #d0f7ea);
+  border: 1px solid var(--black);
+}
+.layanan .active .kibar {
+  background: linear-gradient(90deg, #fff2d4, #fce8e8);
+}
+.layanan .active .kibar .feature,
+.layanan .active .kibar .jenis {
+  color: var(--black);
+  background: linear-gradient(90deg, #fce8e8, #fff2d4);
+  border: 1px solid var(--black);
+}
+.layanan .active .details {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 1rem;
+  font-size: 1.4rem;
+  color: var(--black);
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.layanan .active .details a {
+  position: relative;
+  text-decoration: none;
+  color: var(--basiccolor);
+  font-size: 1.3rem;
+  padding: 2.5px 35px;
+  background: var(--firstcolor);
+  border-radius: 10px;
+}
+
+.layanan .btn-container .active {
+  background: var(--basiccolor);
+  color: var(--black);
+}
+
+.testimoni .container {
+  overflow: hidden;
+  margin: 2rem 0;
+  height: 400px;
+}
+.testimoni .swiper-container {
+  width: 100%;
+  max-width: 100vw;
+  min-width: 300px;
+}
+.testimoni .swiper-slide {
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  max-width: 300px;
+  min-width: 260px;
+  min-height: 300px;
+  max-height: 350px;
+  border: 2px solid #22cbfa;
+  border-radius: 20px;
+  margin: 0 0.5rem;
+}
+.testimoni .swiper-slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #d9f7ff;
+  -webkit-clip-path: polygon(50% 74%, 78% 58%, 100% 64%, 100% 100%, 82% 100%, 50% 100%, 19% 100%, 0 100%, 0 70%, 20% 65%);
+          clip-path: polygon(50% 74%, 78% 58%, 100% 64%, 100% 100%, 82% 100%, 50% 100%, 19% 100%, 0 100%, 0 70%, 20% 65%);
+  width: 100%;
+  height: 20rem;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px;
+}
+.testimoni .box-testi {
+  position: relative;
+  padding: 1rem;
+}
+.testimoni .box-testi .image {
+  position: relative;
+  height: 5rem;
+}
+.testimoni .box-testi .image img {
+  background: var(--fourthcolor);
+  position: absolute;
+  max-height: 5rem;
+  min-height: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+  width: 5rem;
+  border-radius: 50%;
+  border: 2px solid #22cbfa;
+  left: 50%;
+  top: -3rem;
+  transform: translateX(-50%);
+}
+.testimoni .box-testi .testi {
+  position: relative;
+}
+.testimoni .box-testi .testi blockquote {
+  position: relative;
+  font-size: 0.9rem;
+}
+.testimoni .box-testi .testi cite {
+  position: absolute;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  top: -2rem;
+  font-weight: 600;
+}
+
+.paket {
+  max-width: 100vw;
+  overflow: hidden;
+}
+.paket .grid-wrapper {
+  background: var(--fourthcolor);
+  margin-top: 2rem;
+  padding: 2rem;
+}
+.paket .grid-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.paket .container {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--basiccolor);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.paket .container .premium {
+  background: linear-gradient(90deg, #ffe4e4, #d9f7ff);
+}
+.paket .container .berki {
+  background: linear-gradient(90deg, #d0f7ea, #c9e9f2);
+}
+.paket .container .kibar {
+  background: linear-gradient(90deg, #fff2d4, #fce8e8);
+}
+.paket .header {
+  border-radius: 20px 20px 0 0;
+  padding: 1rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: relative;
+}
+.paket .header .title .jenis {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.paket .header .title .feature {
+  font-size: 1.2rem;
+  padding: 3px 25px;
+  border-radius: 20px;
+  background: var(--black);
+  color: var(--basiccolor);
+  display: unset;
+  position: absolute;
+  bottom: 10px;
+  right: 2rem;
+  z-index: 2;
+}
+.paket .header .desc {
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  height: 5.5rem;
+}
+.paket .header .image {
+  position: relative;
+  border-radius: 25px;
+  background: var(--basiccolor);
+}
+.paket .harga {
+  background: var(--basiccolor);
+  padding: 1rem;
+}
+.paket .harga p {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+.paket .harga p:nth-last-child(2) {
+  margin: 0.5rem 0 1rem;
+}
+.paket .harga a {
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 5px 25px;
+  font-size: 1rem;
+  background: var(--firstcolor);
+  color: var(--black);
+  font-weight: 600;
+  transition: 0.5s;
+}
+.paket .harga a:hover {
+  border: 2px solid var(--firstcolor);
+  background: var(--basiccolor);
+}
+.paket .details {
+  background: var(--basiccolor);
+  border-radius: 0 0 20px 20px;
+  padding: 0 1rem 1rem 1rem;
+}
+.paket .details p {
+  padding: 0 0.5rem;
+  display: flex;
+  margin: 0.5rem 0;
+}
+.paket .details p i {
+  margin: 4px 5px 0 0;
+}
+.paket .details .premium,
+.paket .details .berki {
+  padding: 0.5rem 0.5rem;
+}
+
+.footer {
+  background: #22cbfa;
+  border-top: 5px solid rgba(32, 171, 209, 0.8509803922);
+  color: var(--basiccolor);
+  padding: 2rem 1.5rem;
+  min-width: 300px;
+}
+.footer .container {
+  max-width: 80vw;
+  margin: auto;
+}
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .row .footer-col {
+  width: 25%;
+}
+.footer .row .footer-col h4 {
+  font-size: 1.4rem;
+  color: var(--basiccolor);
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 600;
+  position: relative;
+}
+.footer .row .footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: var(--black);
+  height: 3px;
+  width: 50px;
+}
+.footer .row .footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer .row .footer-col ul li a {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: var(--basiccolor);
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer .row .footer-col ul li a:hover {
+  color: var(--basiccolor);
+  padding-left: 10px;
+}
+.footer .row .footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer .row .footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+.footer ul {
+  list-style: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .footer .row .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .footer .row .footer-col {
+    width: 100%;
+  }
+  .footer .row .footer-col h4 {
+    margin: 35px auto;
+    max-width: 200px;
+  }
+  .footer .row .footer-col h4::before {
+    left: auto;
+  }
+  .footer .row .footer-col ul {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+  .footer .row .footer-col .social-links {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 480px) {
+  nav .btn {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  nav .btn {
+    display: none;
+  }
+  .beranda .container .content-left .btn-container .btn {
+    font-size: 0.8rem;
+  }
+  .layanan .btn-container {
+    flex-direction: column;
+    margin: 1rem 1rem;
+  }
+  .layanan .btn-container button {
+    display: block;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .tentang .swiper-slide {
+    width: 100%;
+    max-width: 350px;
+    height: 480px;
+  }
+  .tentang .swiper-slide img {
+    width: 100%;
+    max-width: 350px;
+    max-height: 480px;
+    height: 100%;
+  }
+  .layanan .active {
+    padding: 2rem 1rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .beranda .container {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}
+@media only screen and (min-width: 600px) {
+  .sub-heading {
+    padding: 2rem 4rem;
+  }
+  .beranda {
+    padding: 0 4rem;
+  }
+  .layanan .content-container {
+    padding: 0 2.5rem;
+  }
+  .paket .grid-wrapper {
+    padding: 2rem 4rem;
+  }
+}
+@media only screen and (max-width: 927px) {
+  .beranda .container .content-left {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1150px) {
+  .heading {
+    font-size: 3rem;
+  }
+  .sub-heading {
+    font-size: 1.2rem;
+    padding: 2rem 6rem;
+  }
+  nav .menu-toggle {
+    display: none;
+  }
+  nav .nav-menu {
+    position: absolute;
+    left: unset;
+    width: initial;
+    height: initial;
+    background: transparent;
+    display: flex;
+    justify-content: initial;
+    flex-direction: row;
+    transition: initial;
+    top: 50%;
+    padding: 0;
+    transform: translateY(-50%);
+    right: 14rem;
+  }
+  nav .login {
+    right: 2.5rem;
+  }
+  nav ul a:first-child {
+    margin-top: unset;
+  }
+  nav ul a:last-child {
+    margin-right: 0;
+  }
+  nav ul a .menu {
+    margin: 0 1.5rem;
+  }
+  nav ul a .menu h4,
+nav ul a .menu i {
+    color: var(--basiccolor);
+  }
+  nav ul a .menu i {
+    display: none;
+  }
+  nav ul a .menu::before {
+    content: unset;
+  }
+  nav ul a .menu:hover h4,
+nav ul a .menu:hover i {
+    color: var(--basiccolor);
+  }
+  .beranda {
+    padding: 0 6rem;
+  }
+  .beranda .container .content-left h1 {
+    font-size: 2.2rem;
+  }
+  .beranda .container .content-left p {
+    font-size: 1.2rem;
+  }
+  .beranda .container .content-left .btn-container .btn {
+    font-size: 1rem;
+  }
+  .tentang .swiper-slide {
+    width: 100%;
+    max-width: 400px;
+    height: 550px;
+  }
+  .tentang .swiper-slide .desc {
+    font-size: 1.2em;
+  }
+  .tentang .swiper-slide img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 550px;
+    height: 100%;
+  }
+  .layanan .content-container {
+    padding: 0 4.5rem;
+  }
+  .testimoni {
+    padding: 0 6rem;
+  }
+  .paket .grid-wrapper {
+    padding: 2rem 6rem;
+  }
+}/*# sourceMappingURL=landing.css.map */
