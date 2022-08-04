@@ -36,7 +36,7 @@
                             if($data_check){
                                 $subject = "Email Verification Code";
                                 $message = "Your verification code is $code";
-                                $sender = "From: msntchl@gmail.com";
+                                $sender = "From: mrxsendmail@gmail.com";
                                 if(mail($email, $subject, $message, $sender)){
                                     $info = "Telah mengirim kode otp ke - $email";
                                     $_SESSION['info'] = $info;
@@ -67,7 +67,7 @@
                         if($data_check){
                             $subject = "Email Verification Code";
                             $message = "Your verification code is $code";
-                            $sender = "From: msntchl@gmail.com";
+                            $sender = "From: mrxsendmail@gmail.com";
                             if(mail($email, $subject, $message, $sender)){
                                 $info = "Telah mengirim kode otp ke - $email";
                                 $_SESSION['info'] = $info;

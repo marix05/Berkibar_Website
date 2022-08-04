@@ -18,7 +18,7 @@
             if($run_query){
                 $subject = "Password Reset Code";
                 $message = "Your password reset code is $code";
-                $sender = "From: msntchl@gmail.com"; 
+                $sender = "From: mrxsendmail@gmail.com"; 
                 if(mail($email, $subject, $message, $sender)){
                     $info = "Telah mengiri kode otp ke - $email";
                     $_SESSION['info'] = $info;
